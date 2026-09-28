@@ -1,0 +1,232 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Spice Garden | Restaurant Menu</title>  <style>  
+* {  
+    box-sizing: border-box;  
+    margin: 0;  
+    padding: 0;  
+}  
+  
+body {  
+    font-family: Arial, sans-serif;  
+    background: #f8f5ef;  
+    color: #222;  
+}  
+  
+header {  
+    background: #3b1f16;  
+    color: white;  
+    text-align: center;  
+    padding: 35px 20px;  
+}  
+  
+header h1 {  
+    font-size: 38px;  
+    margin-bottom: 8px;  
+}  
+  
+header p {  
+    color: #f3d7a5;  
+}  
+  
+.menu {  
+    max-width: 1000px;  
+    margin: 30px auto;  
+    padding: 0 20px;  
+}  
+  
+.category {  
+    text-align: center;  
+    margin: 30px 0 20px;  
+}  
+  
+.category h2 {  
+    color: #a33b20;  
+    font-size: 28px;  
+}  
+  
+.food-grid {  
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));  
+    gap: 20px;  
+}  
+  
+.food-card {  
+    background: white;  
+    padding: 22px;  
+    border-radius: 15px;  
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);  
+    transition: 0.3s;  
+}  
+  
+.food-card:hover {  
+    transform: translateY(-5px);  
+}  
+  
+.food-icon {  
+    font-size: 50px;  
+    text-align: center;  
+    margin-bottom: 10px;  
+}  
+  
+.food-card h3 {  
+    font-size: 21px;  
+    margin-bottom: 8px;  
+}  
+  
+.food-card p {  
+    color: #777;  
+    font-size: 14px;  
+    margin-bottom: 15px;  
+}  
+  
+.price {  
+    color: #a33b20;  
+    font-size: 20px;  
+    font-weight: bold;  
+}  
+  
+.order-btn {  
+    float: right;  
+    background: #a33b20;  
+    color: white;  
+    border: none;  
+    padding: 8px 14px;  
+    border-radius: 8px;  
+    cursor: pointer;  
+}  
+  
+.order-btn:hover {  
+    background: #762514;  
+}  
+  
+footer {  
+    margin-top: 40px;  
+    background: #3b1f16;  
+    color: white;  
+    text-align: center;  
+    padding: 25px;  
+}  
+</style>  </head>  <body>  <header>  
+    <h1>🍽️ Spice Garden</h1>  
+    <p>Authentic Taste • Fresh Ingredients • Happy Moments</p>  
+</header>  <div class="menu">  <!-- Starters -->  
+<div class="category">  
+    <h2>🥗 Starters</h2>  
+</div>  
+
+<div class="food-grid">  
+
+    <div class="food-card">  
+        <div class="food-icon">🍟</div>  
+        <h3>French Fries</h3>  
+        <p>Crispy golden fries served with special sauce.</p>  
+        <span class="price">₹120</span>  
+        <button class="order-btn" onclick="order('French Fries')">  
+            Order  
+        </button>  
+    </div>  
+
+    <div class="food-card">  
+        <div class="food-icon">🍗</div>  
+        <h3>Chicken 65</h3>  
+        <p>Spicy and crispy South Indian chicken starter.</p>  
+        <span class="price">₹220</span>  
+        <button class="order-btn" onclick="order('Chicken 65')">  
+            Order  
+        </button>  
+    </div>  
+
+    <div class="food-card">  
+        <div class="food-icon">🥦</div>  
+        <h3>Paneer Tikka</h3>  
+        <p>Grilled paneer with aromatic Indian spices.</p>  
+        <span class="price">₹180</span>  
+        <button class="order-btn" onclick="order('Paneer Tikka')">  
+            Order  
+        </button>  
+    </div>  
+
+</div>  
+
+
+<!-- Main Course -->  
+<div class="category">  
+    <h2>🍛 Main Course</h2>  
+</div>  
+
+<div class="food-grid">  
+
+    <div class="food-card">  
+        <div class="food-icon">🍚</div>  
+        <h3>Chicken Biryani</h3>  
+        <p>Traditional aromatic basmati rice with chicken.</p>  
+        <span class="price">₹280</span>  
+        <button class="order-btn" onclick="order('Chicken Biryani')">  
+            Order  
+        </button>  
+    </div>  
+
+    <div class="food-card">  
+        <div class="food-icon">🍛</div>  
+        <h3>Veg Biryani</h3>  
+        <p>Flavorful basmati rice cooked with fresh vegetables.</p>  
+        <span class="price">₹200</span>  
+        <button class="order-btn" onclick="order('Veg Biryani')">  
+            Order  
+        </button>  
+    </div>  
+
+    <div class="food-card">  
+        <div class="food-icon">🫓</div>  
+        <h3>Butter Naan</h3>  
+        <p>Soft Indian naan topped with delicious butter.</p>  
+        <span class="price">₹60</span>  
+        <button class="order-btn" onclick="order('Butter Naan')">  
+            Order  
+        </button>  
+    </div>  
+
+</div>  
+
+
+<!-- Desserts -->  
+<div class="category">  
+    <h2>🍰 Desserts</h2>  
+</div>  
+
+<div class="food-grid">  
+
+    <div class="food-card">  
+        <div class="food-icon">🍨</div>  
+        <h3>Ice Cream</h3>  
+        <p>Classic creamy vanilla ice cream.</p>  
+        <span class="price">₹100</span>  
+        <button class="order-btn" onclick="order('Ice Cream')">  
+            Order  
+        </button>  
+    </div>  
+
+    <div class="food-card">  
+        <div class="food-icon">🍰</div>  
+        <h3>Chocolate Cake</h3>  
+        <p>Rich and delicious chocolate cake.</p>  
+        <span class="price">₹150</span>  
+        <button class="order-btn" onclick="order('Chocolate Cake')">  
+            Order  
+        </button>  
+    </div>  
+
+</div>
+
+</div>  <footer>  
+    <p>📍 Spice Garden Restaurant</p>  
+    <p>📞 Contact: +91 98765 43210</p>  
+    <p>© 2026 Spice Garden</p>  
+</footer>  <script>  
+function order(food) {  
+    alert("✅ " + food + " added to your order!");  
+}  
+</script>  </body>  
+</html>
